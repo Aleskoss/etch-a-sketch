@@ -14,8 +14,10 @@ function changeGridColor(div){
 
 function createGrid(squares){
 const container = document.querySelector("#container")
-for(let i = 0; i < squares * 2; i++){
+for(let i = 0; i < squares ** 2; i++){
     const div = document.createElement("div")
+    div.style.width = `${840/squares}px`
+    div.style.height = `${700/squares}px`
     div.setAttribute("class", "grid-div")
     container.appendChild(div)
     changeGridColor(div)
@@ -26,6 +28,7 @@ for(let i = 0; i < squares * 2; i++){
 function getGridSize(){
     const button = document.querySelector("button")
     button.addEventListener("click", () =>{
+        container.innerHTML = ""
         let gridSize = prompt("How many squares do you want in your sketch pad")
         while(gridSize >= 100){
             gridSize = prompt("Input a number lower than 100")

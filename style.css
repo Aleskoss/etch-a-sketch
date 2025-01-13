@@ -1,14 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 #container{
     display: flex;
     flex-wrap: wrap;
     width: 840px;
     height: 700px;
-    border: 10px yellow solid;
-}
-.grid-div{
-    border: 1px black solid;
-    width: 20px;
-    height: 20px;
+    border: 20px yellow dotted;
 }
 .black{
     background-color: black;
