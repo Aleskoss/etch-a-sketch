@@ -2,13 +2,13 @@
 // create 1 div and then create more by using loop
 
 function changeGridColor(div){
+    let darker = 0.1
     div.addEventListener("mouseover", () =>{
-        console.log(div.classList[1])
-        if(div.classList[1] == "black"){
-            div.classList.remove("black")
-        }else{
-        div.classList.add("black")
-        }
+            div.style.backgroundColor = `rgba(${Math.floor(Math.random() * 255)}
+            ,${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)}
+            ,${darker})`
+            darker += 0.1
+            console.log(darker)
     })
 }
 
