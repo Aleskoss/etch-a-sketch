@@ -5,3 +5,20 @@
   margin: 0;
   padding: 0;
 }
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#container{
+  border: 1px black solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+.square:hover{
+  background-color: blue;
+}
+.change-color{
+  background-color: blue;
+}
