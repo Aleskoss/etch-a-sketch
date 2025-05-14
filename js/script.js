@@ -3,14 +3,13 @@ function getSize(){
   const btn = document.querySelector("#dimensions")
   btn.addEventListener("click",() => {
     dimensions = prompt("What size should be the grid?")
+    if(dimensions > 100) dimensions = prompt("ERROR!!! You can input only dimension lower than 100")
     createPlayGround(dimensions)
   })
 }
 function createPlayGround(size){
   const container = document.querySelector("#container")
-  while(container.lastChild){
-    container.removeChild(container.lastChild)
-  }
+  deleteGridDimensions(container)
   container.style.height = "802px"
   container.style.width = "802px"
   for(let i = 0; i < size*size; i++){
@@ -30,6 +29,11 @@ function createPlayGround(size){
   })
   function changeColor(item){
     item.classList.toggle("change-color")
+  }
+}
+function deleteGridDimensions(element){
+  while(element.lastChild){
+    element.removeChild(container.lastChild)
   }
 }
 getSize()
