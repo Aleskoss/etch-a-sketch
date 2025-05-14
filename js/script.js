@@ -23,15 +23,22 @@ function createPlayGround(size){
   }
 function changeColor(){
   let colorPicked = ""
+  let opacity = 0
     document.addEventListener("click",(e) => {
     let target = e.target
     console.log(target.id)
     switch(target.id){
       case "set-blue":
-        colorPicked = "set-blue"
+        colorPicked = "blue"
+        opacity = 0
       break;
       case "rgb":
-        colorPicked = ""
+        colorPicked = "rgb"
+        opacity = 0
+      break;
+      case "erase":
+        colorPicked = "white"
+        opacity = 0
       break;
     }
   })
@@ -39,10 +46,12 @@ function changeColor(){
     const target = e.target
     switch(target.classList.value){
       case "square":
-        if(colorPicked === "set-blue"){
-        target.classList.toggle("change-color")
+        opacity += 0.1
+        target.style.opacity = opacity
+        if(colorPicked != "rgb"){
+          target.style.backgroundColor = colorPicked
         }else{
-        target.style.backgroundColor = `rgb(${generateRandomNum()}, ${generateRandomNum()}, ${generateRandomNum()})`
+          target.style.backgroundColor = `rgb(${generateRandomNum()}, ${generateRandomNum()}, ${generateRandomNum()})`
         }
         break;
     }

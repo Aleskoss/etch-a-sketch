@@ -22,3 +22,8 @@ body{
 .change-color{
   background-color: blue;
 }
+#buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
