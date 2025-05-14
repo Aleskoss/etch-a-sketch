@@ -8,3 +8,4 @@ My etch a sketch project where i will demonstrate more of my skills with the DOM
 6. function get size for etch a sketch dimensions
 7. when player clicks a button it outputs a prompt
 8. store prompt in variable dimensions, return that variable
+9. let user pick which color to use rgb or default color - store choice in variable and invoke it in change color function

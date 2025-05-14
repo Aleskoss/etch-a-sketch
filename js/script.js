@@ -19,17 +19,38 @@ function createPlayGround(size){
     square.classList = "square"
     container.appendChild(square)
   }
-  document.addEventListener("mouseover", (e) => {
+  changeColor()
+  }
+function changeColor(){
+  let colorPicked = ""
+    document.addEventListener("click",(e) => {
+    let target = e.target
+    console.log(target.id)
+    switch(target.id){
+      case "set-blue":
+        colorPicked = "set-blue"
+      break;
+      case "rgb":
+        colorPicked = ""
+      break;
+    }
+  })
+    document.addEventListener("mouseover", (e) => {
     const target = e.target
     switch(target.classList.value){
       case "square":
-        changeColor(target)
+        if(colorPicked === "set-blue"){
+        target.classList.toggle("change-color")
+        }else{
+        target.style.backgroundColor = `rgb(${generateRandomNum()}, ${generateRandomNum()}, ${generateRandomNum()})`
+        }
         break;
     }
   })
-  function changeColor(item){
-    item.classList.toggle("change-color")
-  }
+}
+  function generateRandomNum(){
+    let randomNum = Math.floor(Math.random() * 255)
+    return randomNum
 }
 function deleteGridDimensions(element){
   while(element.lastChild){
